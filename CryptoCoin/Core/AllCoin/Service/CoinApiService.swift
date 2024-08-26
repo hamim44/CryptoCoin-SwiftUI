@@ -61,7 +61,7 @@ class CoinApiService: HTTPDataDownloader {
     
     func CoinDetail(id:String) async throws -> CoinDetails? {
    //     let CoindetailUrl = "https://api.coingecko.com/api/v3/coins/\(id)?localization=false"
-        if let cache = CoinDetailsCache.shard.get(forKey: id) {
+        if let cache = CoinDetailsCache.shared.get(forKey: id) {
             print("get cache data")
             return cache
         }
@@ -72,7 +72,7 @@ class CoinApiService: HTTPDataDownloader {
         
         let details =  try await CoinDetailGeneric(as: CoinDetails.self, endPoint: endpoint)
         print("get for api")
-        CoinDetailsCache.shard.set(details, forkey: id)
+        CoinDetailsCache.shared.set(details, forkey: id)
         return details
 
     }

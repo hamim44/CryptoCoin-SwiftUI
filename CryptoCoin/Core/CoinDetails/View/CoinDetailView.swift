@@ -20,6 +20,14 @@ struct CoinDetailView: View {
         self.dvm = CoinDetailViewModel(CoinId: coin.id, service: service)
     }
     
+    
+    
+//    init(coin: Coin) {
+//        self.coin = coin
+//        self.dvm = CoinDetailViewModel(CoinId: coin.id, service: service)
+//    }
+//    
+    
     var body: some View {
         ScrollView{
             VStack(alignment: .leading) {

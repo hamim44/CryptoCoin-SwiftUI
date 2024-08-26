@@ -9,7 +9,7 @@ import Foundation
 
 class CoinDetailsCache {
     
-    static let shard = CoinDetailsCache()
+    static let shared = CoinDetailsCache()
     
     private let cache = NSCache<NSString, NSData>()
     
