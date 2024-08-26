@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-//    private let service: CoinApiService
-//    @StateObject var vm: CoinviewModel
-//    
-    @EnvironmentObject var viewModel: CoinviewModel
+    private let service: CoinApiService
+    @StateObject var viewModel: CoinviewModel
+//
+//    @EnvironmentObject var viewModel: CoinviewModel
     
-//    init(service: CoinApiService ) {
-//        self.service = service
-//        self._vm = StateObject(wrappedValue: CoinviewModel(service: service))
-//    }
+    init(service: CoinApiService ) {
+        self.service = service
+        self._viewModel = StateObject(wrappedValue: CoinviewModel(service: service))
+    }
     
     var body: some View {
         NavigationStack {
@@ -40,8 +40,8 @@ struct ContentView: View {
             }
             .navigationTitle("Coins")
             .navigationDestination(for: Coin.self,  destination: { coin in
-//                CoinDetailView(coin: coin, service: service)
-                CoinDetailView(coin: coin)
+                CoinDetailView(coin: coin, service: service)
+//                CoinDetailView(coin: coin)
             })
             .overlay {
                 if let errorMessage = viewModel.errorMessage{
@@ -55,6 +55,6 @@ struct ContentView: View {
 }
 
 #Preview {
- //   ContentView(service: CoinApiService())
-    ContentView()
+    ContentView(service: CoinApiService())
+ 
 }

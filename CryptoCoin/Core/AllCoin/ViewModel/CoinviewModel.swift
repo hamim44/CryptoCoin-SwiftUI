@@ -11,7 +11,8 @@ class CoinviewModel: ObservableObject {
     
     @Published var Coins = [Coin]()
     @Published var errorMessage:String?
-    @Published var coindetail: CoinDetails?
+    
+//    @Published var coindetail: CoinDetails?
     
     private var service: CoinApiService
     
@@ -38,14 +39,14 @@ class CoinviewModel: ObservableObject {
     
     
     
-    @MainActor
-    func fatchCoinDetail(coinId:String) async {
-        do{
-            self.coindetail = try await service.CoinDetail(id: coinId)
-        } catch {
-            print("DEBUG: \(error.localizedDescription)")
-        }
-    }
+//    @MainActor
+//    func fatchCoinDetail(coinId:String) async {
+//        do{
+//            self.coindetail = try await service.CoinDetail(id: coinId)
+//        } catch {
+//            print("DEBUG: \(error.localizedDescription)")
+//        }
+//    }
     
     func fatchCoinWithCompletionHandler(){
         service.fatchcoinwithPriceWithCompletionHandelar { [weak self] results in

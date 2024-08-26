@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct CryptoCoinApp: App {
-    @StateObject var viewModel = CoinviewModel(service: CoinApiService())
+//    @StateObject var viewModel = CoinviewModel(service: CoinApiService())
+    
     var body: some Scene {
         WindowGroup {
 //            ContentView(service: CoinApiService())
-            ContentView()
-                .environmentObject(viewModel)
+//            ContentView()
+//                .environmentObject(viewModel)
         }
     }
 }

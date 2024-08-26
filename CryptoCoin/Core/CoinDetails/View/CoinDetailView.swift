@@ -11,14 +11,14 @@ struct CoinDetailView: View {
     
     let coin: Coin
     
-    @EnvironmentObject var dvm: CoinviewModel
+//    @EnvironmentObject var dvm: CoinviewModel
     
-//    @ObservedObject var dvm: CoinDetailViewModel
+    @ObservedObject var dvm: CoinDetailViewModel
     
-//    init(coin: Coin,service: CoinApiService) {
-//        self.coin = coin
-//        self.dvm = CoinDetailViewModel(CoinId: coin.id, service: service)
-//    }
+    init(coin: Coin,service: CoinApiService) {
+        self.coin = coin
+        self.dvm = CoinDetailViewModel(CoinId: coin.id, service: service)
+    }
     
     var body: some View {
         ScrollView{
@@ -38,8 +38,8 @@ struct CoinDetailView: View {
                 
             }
             .task{
-//                await dvm.fatchCoinDetail()
-                await dvm.fatchCoinDetail(coinId: coin.id)
+                await dvm.fatchCoinDetail()
+    //            await dvm.fatchCoinDetail(coinId: coin.id)
             }
             .padding()
         }
