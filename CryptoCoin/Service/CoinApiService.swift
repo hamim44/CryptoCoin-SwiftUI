@@ -7,7 +7,13 @@
 
 import Foundation
 
-class CoinApiService: HTTPDataDownloader {
+protocol CoinApiProtocal {
+    func fatchCoinwithAsync() async throws -> [Coin]
+    func CoinDetail(id:String) async throws -> CoinDetails?
+}
+
+
+class CoinApiService: HTTPDataDownloader, CoinApiProtocal {
     
     init () {
         print("DEBUG: get init service")
@@ -60,7 +66,7 @@ class CoinApiService: HTTPDataDownloader {
     //MARK: - Coin Details API fatch Data
     
     func CoinDetail(id:String) async throws -> CoinDetails? {
-   //     let CoindetailUrl = "https://api.coingecko.com/api/v3/coins/\(id)?localization=false"
+//        let CoindetailUrl = "https://api.coingecko.com/api/v3/coins/\(id)?localization=false"
         if let cache = CoinDetailsCache.shared.get(forKey: id) {
             print("get cache data")
             return cache
