@@ -60,12 +60,13 @@ class CoinApiService: HTTPDataDownloader, CoinApiProtocal {
     
     
     func fatchCoinwithAsync() async throws -> [Coin] {
-        print("DEBUG page linit before incriment \(page)")
+        
         page += 1
-        print("DEBUG page linit after incriment \(page)")
+        
         guard let endpoint = allCoinURL else {
             throw CoinApiError.requestfailed(Description: "Invalid data")
         }
+        
         return try await CoinDetailGeneric(as: [Coin].self, endPoint: endpoint)
         
     }

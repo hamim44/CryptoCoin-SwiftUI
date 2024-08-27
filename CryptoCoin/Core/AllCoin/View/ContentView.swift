@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
     private let service: CoinApiProtocal
@@ -26,6 +27,17 @@ struct ContentView: View {
                         HStack(spacing: 12) {
                             Text("\(coin.marketCapRank)")
                                 .foregroundStyle(.gray)
+//                            AsyncImage(url: URL(string: coin.image)) { image in
+//                                image
+//                                    .resizable()
+//                                    .frame(width: 32, height: 32)
+//                            } placeholder: {
+//                                EmptyView()
+//                            }
+                            KFImage(URL(string: coin.image))
+                                .resizable()
+                                .frame(width: 32, height: 32)
+
                             
                             VStack (alignment:.leading,spacing: 3){
                                 Text(coin.name)
@@ -35,7 +47,6 @@ struct ContentView: View {
                             }
                         }
                         .onAppear {
-                            print("pagination hit")
                             if coin == viewModel.Coins.last {
                                 Task{ await viewModel.fatchCoinWithAsyscthowrs()}
                             }
@@ -57,6 +68,9 @@ struct ContentView: View {
                 }
             }
             
+        }
+        .task {
+            await viewModel.fatchCoinWithAsyscthowrs()
         }
         
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CoinDetailView: View {
     
@@ -32,12 +33,21 @@ struct CoinDetailView: View {
         ScrollView{
             VStack(alignment: .leading) {
                 if let details = dvm.coindetail {
-                    Text(details.name)
-                        .fontWeight(.semibold)
-                        .font(.subheadline)
-                    
-                    Text(details.symbol.uppercased())
-                        .font(.footnote)
+                    HStack {
+                        VStack(alignment:.leading,spacing: 2){
+                            Text(details.name)
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
+                            
+                            Text(details.symbol.uppercased())
+                                .font(.footnote)
+                        }
+                        Spacer()
+                        
+                        KFImage(URL(string: coin.image))
+                            .resizable()
+                            .frame(width: 64, height: 64)
+                    }
                     
                     Text(details.description.text)
                         .font(.footnote)
@@ -45,10 +55,10 @@ struct CoinDetailView: View {
                 }
                 
             }
-            .task{
-                await dvm.fatchCoinDetail()
-    //            await dvm.fatchCoinDetail(coinId: coin.id)
-            }
+//            .task{
+//                await dvm.fatchCoinDetail()
+//    //            await dvm.fatchCoinDetail(coinId: coin.id)
+//            }
             .padding(.horizontal)
         }
     }

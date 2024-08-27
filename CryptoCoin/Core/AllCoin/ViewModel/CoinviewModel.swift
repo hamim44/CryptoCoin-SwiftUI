@@ -18,7 +18,7 @@ class CoinviewModel: ObservableObject {
     
     init(service: CoinApiProtocal) {
         self.service = service
-        Task { await fatchCoinWithAsyscthowrs() }
+//        Task { await fatchCoinWithAsyscthowrs() }
     }
     
     @MainActor

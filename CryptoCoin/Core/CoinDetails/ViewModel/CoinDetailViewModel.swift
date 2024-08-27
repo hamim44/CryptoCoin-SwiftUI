@@ -17,7 +17,7 @@ class CoinDetailViewModel: ObservableObject {
     init(CoinId: String, service: CoinApiProtocal){
       self.service = service
         self.coinId = CoinId
- //           Task { await fatchCoinDetail() }
+            Task { await fatchCoinDetail() }
     }
     
     @MainActor
