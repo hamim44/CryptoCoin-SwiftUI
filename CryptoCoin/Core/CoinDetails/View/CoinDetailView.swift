@@ -15,7 +15,7 @@ struct CoinDetailView: View {
     
     @ObservedObject var dvm: CoinDetailViewModel
     
-    init(coin: Coin,service: CoinApiService) {
+    init(coin: Coin,service: CoinApiProtocal) {
         self.coin = coin
         self.dvm = CoinDetailViewModel(CoinId: coin.id, service: service)
     }
@@ -41,7 +41,7 @@ struct CoinDetailView: View {
                     
                     Text(details.description.text)
                         .font(.footnote)
-                        .padding(.vertical)
+                        .padding(.vertical,12)
                 }
                 
             }
@@ -49,7 +49,7 @@ struct CoinDetailView: View {
                 await dvm.fatchCoinDetail()
     //            await dvm.fatchCoinDetail(coinId: coin.id)
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
     }

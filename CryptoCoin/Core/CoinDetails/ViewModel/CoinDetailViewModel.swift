@@ -9,12 +9,12 @@ import Foundation
 
 class CoinDetailViewModel: ObservableObject {
     
-    private var service: CoinApiService
+    private var service: CoinApiProtocal
     private var coinId: String
     
     @Published var coindetail: CoinDetails?
     
-    init(CoinId: String, service: CoinApiService){
+    init(CoinId: String, service: CoinApiProtocal){
       self.service = service
         self.coinId = CoinId
  //           Task { await fatchCoinDetail() }

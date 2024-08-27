@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9252BDB02C7CF5280082AB80 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9252BDAF2C7CF5280082AB80 /* MockAPIService.swift */; };
 		926C815F2C7C5AE800149454 /* CoinDetailsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C815E2C7C5AE800149454 /* CoinDetailsCache.swift */; };
+		92A964F52C7DA30400885C88 /* CryptoCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A964F42C7DA30400885C88 /* CryptoCoinTests.swift */; };
+		92A964FC2C7DA31B00885C88 /* Cointest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A964FB2C7DA31B00885C88 /* Cointest.swift */; };
+		92A964FE2C7DEB2C00885C88 /* CoinViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A964FD2C7DEB2C00885C88 /* CoinViewModelTest.swift */; };
+		92A964FF2C7DF0E800885C88 /* Cointest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A964FB2C7DA31B00885C88 /* Cointest.swift */; };
 		92ABB8D22C79A34D00858168 /* CryptoCoinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABB8D12C79A34D00858168 /* CryptoCoinApp.swift */; };
 		92ABB8D42C79A34D00858168 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ABB8D32C79A34D00858168 /* ContentView.swift */; };
 		92ABB8D62C79A34E00858168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92ABB8D52C79A34E00858168 /* Assets.xcassets */; };
@@ -22,8 +27,23 @@
 		92CE87E72C7A65F00007D05C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CE87E62C7A65F00007D05C /* API.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		92A964F62C7DA30400885C88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92ABB8C62C79A34D00858168 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92ABB8CD2C79A34D00858168;
+			remoteInfo = CryptoCoin;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		9252BDAF2C7CF5280082AB80 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
 		926C815E2C7C5AE800149454 /* CoinDetailsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsCache.swift; sourceTree = "<group>"; };
+		92A964F22C7DA30400885C88 /* CryptoCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A964F42C7DA30400885C88 /* CryptoCoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoinTests.swift; sourceTree = "<group>"; };
+		92A964FB2C7DA31B00885C88 /* Cointest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cointest.swift; sourceTree = "<group>"; };
+		92A964FD2C7DEB2C00885C88 /* CoinViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewModelTest.swift; sourceTree = "<group>"; };
 		92ABB8CE2C79A34D00858168 /* CryptoCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92ABB8D12C79A34D00858168 /* CryptoCoinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CryptoCoinApp.swift; path = ../CryptoCoinApp.swift; sourceTree = "<group>"; };
 		92ABB8D32C79A34D00858168 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +60,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		92A964EF2C7DA30400885C88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92ABB8CB2C79A34D00858168 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,10 +85,21 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		92A964F32C7DA30400885C88 /* CryptoCoinTests */ = {
+			isa = PBXGroup;
+			children = (
+				92A964F42C7DA30400885C88 /* CryptoCoinTests.swift */,
+				92A964FB2C7DA31B00885C88 /* Cointest.swift */,
+				92A964FD2C7DEB2C00885C88 /* CoinViewModelTest.swift */,
+			);
+			path = CryptoCoinTests;
+			sourceTree = "<group>";
+		};
 		92ABB8C52C79A34D00858168 = {
 			isa = PBXGroup;
 			children = (
 				92ABB8D02C79A34D00858168 /* CryptoCoin */,
+				92A964F32C7DA30400885C88 /* CryptoCoinTests */,
 				92ABB8CF2C79A34D00858168 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				92ABB8CE2C79A34D00858168 /* CryptoCoin.app */,
+				92A964F22C7DA30400885C88 /* CryptoCoinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +118,7 @@
 			children = (
 				92CE87E52C7A65D30007D05C /* Share */,
 				92ABB8E02C79A39000858168 /* Core */,
+				92ABB8E42C79A48800858168 /* Service */,
 				92ABB8DF2C79A35200858168 /* App */,
 				92ABB8D52C79A34E00858168 /* Assets.xcassets */,
 				92ABB8D72C79A34E00858168 /* Preview Content */,
@@ -140,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				92ABB8E92C79A53800858168 /* CoinApiService.swift */,
+				9252BDAF2C7CF5280082AB80 /* MockAPIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -150,7 +191,6 @@
 				92ABB8E12C79A3C000858168 /* Model */,
 				92ABB8E32C79A3E100858168 /* ViewModel */,
 				92ABB8E22C79A3D200858168 /* View */,
-				92ABB8E42C79A48800858168 /* Service */,
 			);
 			path = AllCoin;
 			sourceTree = "<group>";
@@ -201,6 +241,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		92A964F12C7DA30400885C88 /* CryptoCoinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92A964FA2C7DA30400885C88 /* Build configuration list for PBXNativeTarget "CryptoCoinTests" */;
+			buildPhases = (
+				92A964EE2C7DA30400885C88 /* Sources */,
+				92A964EF2C7DA30400885C88 /* Frameworks */,
+				92A964F02C7DA30400885C88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92A964F72C7DA30400885C88 /* PBXTargetDependency */,
+			);
+			name = CryptoCoinTests;
+			productName = CryptoCoinTests;
+			productReference = 92A964F22C7DA30400885C88 /* CryptoCoinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		92ABB8CD2C79A34D00858168 /* CryptoCoin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92ABB8DC2C79A34E00858168 /* Build configuration list for PBXNativeTarget "CryptoCoin" */;
@@ -228,6 +286,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					92A964F12C7DA30400885C88 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 92ABB8CD2C79A34D00858168;
+					};
 					92ABB8CD2C79A34D00858168 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -247,11 +309,19 @@
 			projectRoot = "";
 			targets = (
 				92ABB8CD2C79A34D00858168 /* CryptoCoin */,
+				92A964F12C7DA30400885C88 /* CryptoCoinTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		92A964F02C7DA30400885C88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92ABB8CC2C79A34D00858168 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,11 +334,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		92A964EE2C7DA30400885C88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A964FE2C7DEB2C00885C88 /* CoinViewModelTest.swift in Sources */,
+				92A964FC2C7DA31B00885C88 /* Cointest.swift in Sources */,
+				92A964F52C7DA30400885C88 /* CryptoCoinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92ABB8CA2C79A34D00858168 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9252BDB02C7CF5280082AB80 /* MockAPIService.swift in Sources */,
 				92ABB8E62C79A49600858168 /* Coin.swift in Sources */,
+				92A964FF2C7DF0E800885C88 /* Cointest.swift in Sources */,
 				926C815F2C7C5AE800149454 /* CoinDetailsCache.swift in Sources */,
 				92ABB8D42C79A34D00858168 /* ContentView.swift in Sources */,
 				92ABB8D22C79A34D00858168 /* CryptoCoinApp.swift in Sources */,
@@ -284,7 +366,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		92A964F72C7DA30400885C88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92ABB8CD2C79A34D00858168 /* CryptoCoin */;
+			targetProxy = 92A964F62C7DA30400885C88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		92A964F82C7DA30400885C88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.CryptoCoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoCoin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CryptoCoin";
+			};
+			name = Debug;
+		};
+		92A964F92C7DA30400885C88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.CryptoCoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CryptoCoin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CryptoCoin";
+			};
+			name = Release;
+		};
 		92ABB8DA2C79A34E00858168 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -463,6 +587,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		92A964FA2C7DA30400885C88 /* Build configuration list for PBXNativeTarget "CryptoCoinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A964F82C7DA30400885C88 /* Debug */,
+				92A964F92C7DA30400885C88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92ABB8C92C79A34D00858168 /* Build configuration list for PBXProject "CryptoCoin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

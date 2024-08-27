@@ -14,9 +14,9 @@ class CoinviewModel: ObservableObject {
     
 //    @Published var coindetail: CoinDetails?
     
-    private var service: CoinApiService
+    private var service: CoinApiProtocal
     
-    init(service: CoinApiService) {
+    init(service: CoinApiProtocal) {
         self.service = service
         Task { await fatchCoinWithAsyscthowrs() }
     }
@@ -48,17 +48,17 @@ class CoinviewModel: ObservableObject {
 //        }
 //    }
     
-    func fatchCoinWithCompletionHandler(){
-        service.fatchcoinwithPriceWithCompletionHandelar { [weak self] results in
-            DispatchQueue.main.async {
-                switch results {
-                case .success(let coin):
-                    self?.Coins = coin
-                case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
-                }
-            }
-        }
-    }
+//    func fatchCoinWithCompletionHandler(){
+//        service.fatchcoinwithPriceWithCompletionHandelar { [weak self] results in
+//            DispatchQueue.main.async {
+//                switch results {
+//                case .success(let coin):
+//                    self?.Coins = coin
+//                case .failure(let error):
+//                    self?.errorMessage = error.localizedDescription
+//                }
+//            }
+//        }
+//    }
     
 }

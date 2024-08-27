@@ -13,7 +13,7 @@ struct CryptoCoinApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView(service: CoinApiService())
+            ContentView(service: CoinApiService())
 //            ContentView()
 //                .environmentObject(viewModel)
         }
