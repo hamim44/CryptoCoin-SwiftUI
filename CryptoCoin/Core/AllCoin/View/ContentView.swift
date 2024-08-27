@@ -33,8 +33,15 @@ struct ContentView: View {
     
                                 Text(coin.symbol.uppercased())
                             }
+                        }
+                        .onAppear {
+                            print("pagination hit")
+                            if coin == viewModel.Coins.last {
+                                Task{ await viewModel.fatchCoinWithAsyscthowrs()}
+                            }
+                        }
+                        .font(.footnote)
                             
-                        }.font(.footnote)
                     }
                 }
             }
@@ -43,6 +50,7 @@ struct ContentView: View {
                 CoinDetailView(coin: coin, service: service)
 //                CoinDetailView(coin: coin)
             })
+            
             .overlay {
                 if let errorMessage = viewModel.errorMessage{
                     Text(errorMessage)

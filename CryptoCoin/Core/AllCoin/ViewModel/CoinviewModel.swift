@@ -24,7 +24,9 @@ class CoinviewModel: ObservableObject {
     @MainActor
     func fatchCoinWithAsyscthowrs() async {
         do {
-            self.Coins =  try await service.fatchCoinwithAsync()
+            let coins =  try await service.fatchCoinwithAsync()
+            self.Coins.append(contentsOf: coins)
+            
         } catch {
             
             guard let error = error as? CoinApiError else { return }

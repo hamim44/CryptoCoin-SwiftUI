@@ -15,6 +15,9 @@ protocol CoinApiProtocal {
 
 class CoinApiService: HTTPDataDownloader, CoinApiProtocal {
     
+    private var page = 0
+    private let fatchLimit = 30
+    
     init () {
         print("DEBUG: get init service")
     }
@@ -35,7 +38,8 @@ class CoinApiService: HTTPDataDownloader, CoinApiProtocal {
         components.queryItems = [
             .init(name: "vs_currency", value: "usd"),
             .init(name: "order", value: "market_cap_desc"),
-            .init(name: "per_page", value: "20"),
+            .init(name: "per_page", value: "\(fatchLimit)"),
+            .init(name: "page", value: "\(page)"),
             .init(name: "price_change_percentage", value: "24h")
         ]
         return components.url?.absoluteString
@@ -56,7 +60,10 @@ class CoinApiService: HTTPDataDownloader, CoinApiProtocal {
     
     
     func fatchCoinwithAsync() async throws -> [Coin] {
-        guard let endpoint = allCoinURL else { 
+        print("DEBUG page linit before incriment \(page)")
+        page += 1
+        print("DEBUG page linit after incriment \(page)")
+        guard let endpoint = allCoinURL else {
             throw CoinApiError.requestfailed(Description: "Invalid data")
         }
         return try await CoinDetailGeneric(as: [Coin].self, endPoint: endpoint)
